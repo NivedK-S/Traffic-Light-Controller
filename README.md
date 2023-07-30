@@ -1,4 +1,7 @@
-
+## 🚀 About Me
+I'm a VLSI enthusiast who recently qualified GATE 2023 with an  AIR of 5411. I possess sound knowledge in ASIC design flow, Digital System Design, CMOS, Verilog, and Digital Electronics. Passionate about creating innovative solutions and excited to contribute to the world of VLSI. Let's connect and collaborate on exciting projects!
+## 🛠 Skills
+Verilog, Digital Electronics, Digital System Design, CMOS, ASIC Design Flow, VLSI.
 # Traffic Light Controller
 
 This is the verilog implementation of Traffic Light Controller using Finite State Machine.
