@@ -59,7 +59,7 @@ begin
  endcase
 end
 //State Machine using case assignments
-always@(state or x)
+always@(state or X)
 begin
     case(state)
      S0: if(X)
