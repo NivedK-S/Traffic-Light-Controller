@@ -1,5 +1,5 @@
 module Traffic_Light_Controller (
-    input x;
+    input x;// x is the output from sensor on Country Road
     input clk;
     input clear;
     output reg [1:0] hwy;
@@ -32,26 +32,50 @@ always@(state)
 begin
  case (state)
     S0 : begin
-        hwy=GREEN;
-        cntry=RED;
+        hwy<=GREEN;
+        cntry<=RED;
          end
     S1 : begin
-        hwy=YELLOW;
-        cntry=RED;
+        hwy<=YELLOW;
+        cntry<=RED;
          end
     S2 : begin
-        hwy=RED;
-        cntry=RED;
+        hwy<=RED;
+        cntry<=RED;
          end  
     S3 : begin
-        hwy=RED;
-        cntry=GREEN;
+        hwy<=RED;
+        cntry<=GREEN;
          end
     S4 : begin
-        hwy=RED;
-        cntry=YELLOW;
+        hwy<=RED;
+        cntry<=YELLOW;
          end        
-    default: 
+    default:  begin
+                hwy<=GREEN;
+                cntry<=RED;
+              end
+         
  endcase
+end
+//State Machine using case assignments
+always@(state or x)
+begin
+    case(state)
+     S0: if(x)
+           next_state <= S1;
+         else
+           next_state <= S0;
+     S1:next_state<=S2;
+     S2:next_state<=S3;
+     S3:begin
+        if(x)
+        next_state<=S3;
+        else
+        next_state<=S4;
+        end
+     S4:next_state<=S0;
+
+     endcase
 end  
 endmodule
