@@ -1,5 +1,5 @@
 module Traffic_Light_Controller (
-    input X,// X is the output from sensor on Country Road
+    input traffic,// traffic is the output from sensor on Country Road
     input clk,
     input clear,
     output reg [1:0] hwy,
@@ -59,17 +59,17 @@ begin
  endcase
 end
 //State Machine using case assignments
-always@(state or X)
+    always@(state or traffic)
 begin
     case(state)
-     S0: if(X)
+     S0: if(traffic)
            next_state <= S1;
          else
            next_state <= S0;
      S1:next_state<=S2;
      S2:next_state<=S3;
      S3:begin
-        if(X)
+        if(traffic)
         next_state<=S3;
         else
         next_state<=S4;
