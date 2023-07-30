@@ -1,5 +1,5 @@
 module Traffic_Light_Controller (
-    input x,// x is the output from sensor on Country Road
+    input X,// X is the output from sensor on Country Road
     input clk,
     input clear,
     output reg [1:0] hwy,
@@ -62,14 +62,14 @@ end
 always@(state or x)
 begin
     case(state)
-     S0: if(x)
+     S0: if(X)
            next_state <= S1;
          else
            next_state <= S0;
      S1:next_state<=S2;
      S2:next_state<=S3;
      S3:begin
-        if(x)
+        if(X)
         next_state<=S3;
         else
         next_state<=S4;
