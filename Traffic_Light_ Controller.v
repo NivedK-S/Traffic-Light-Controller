@@ -1,9 +1,9 @@
 module Traffic_Light_Controller (
-    input x;// x is the output from sensor on Country Road
-    input clk;
-    input clear;
-    output reg [1:0] hwy;
-    output reg [1:0] cntry;
+    input x,// x is the output from sensor on Country Road
+    input clk,
+    input clear,
+    output reg [1:0] hwy,
+    output reg [1:0] cntry,
 
 );
 //Status of lights
